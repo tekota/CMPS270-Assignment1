@@ -13,14 +13,14 @@ int hamming_distance(int x, int y) {
 }
 
 int main(){
-    int x,y=1;
+    int x =1;
+    int y=1;
 
     while (x>=0 && y>=0){
 
-    printf("Enter two numbers: ");
+    printf("Enter two numbers: \n");
     scanf("%d %d", &x, &y);
-    printf("%d %d", x, y);
-    printf("Hamming distance: %d", hamming_distance(x, y));
+    printf("Hamming distance: %d\n", hamming_distance(x, y));
 
     }
 
