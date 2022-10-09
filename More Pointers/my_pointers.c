@@ -20,6 +20,7 @@ char** merge(char** a, char** b, int n, int m) {
 
 // Main Function
 // if you want to test this, you can change the values of the arrays
+// Should manually update the sizes of the arrays
 // With the implemented test it should return: ab / ac / za / zb / zzzzc
 int main(){
     char* a[] = {"ab", "ac"};
