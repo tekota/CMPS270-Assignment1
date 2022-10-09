@@ -5,6 +5,7 @@
 const int SIZE = 10;
 int A[SIZE] = {1,2,3,1,1,2,3,1,2,1};
 
+// Function to print the array elements on each line
 void printArray(int A[]){
     for(int i = 0; i < SIZE; i++){
         printf("%d\t%d ", i, A[i]);
@@ -12,6 +13,7 @@ void printArray(int A[]){
     }
 }
 
+// Function to find the max 
 int max(int a, int b, int c){
     if(a > b && a > c){
         return a;
@@ -22,6 +24,8 @@ int max(int a, int b, int c){
     }
 }
 
+// Function to count a particular element in an array
+// int x needs to be in array
 // Assuming the array contains only 1,2 and 3
 int counter(int A[], int x){
     int count = 0;
@@ -33,6 +37,7 @@ int counter(int A[], int x){
     return count;
 }
 
+// Prints array histogram with '*'s 
 void arrayHistogram(int A[]){
     printf("Value Frequency Histogram\n");
     int count1 = counter(A, 1);
@@ -44,29 +49,30 @@ void arrayHistogram(int A[]){
     for (int i = 0; i < count1; i++){
         printf("*");
     }
-
+    printf("\n");
     // Value for 2
     printf("2\t%d\t", count2);
     for (int i = 0; i < count2; i++){
         printf("*");
     }
-    
+    printf("\n");
     // Value for 3
     printf("3\t%d\t", count3);
     for (int i = 0; i < count3; i++){
         printf("*");
     }
-
+    printf("\n");
 }
 
 
-
+// Swaps values of two indices in an array
 void swapValues(int A[], int a, int b){
     int temp = A[a];
     A[a] = A[b];
     A[b] = temp;
 }
 
+// Sorts the array in ascending order using swapValues
 void bubbleSort(int A[]){
     for(int i = 0; i < SIZE; i++){
         for(int j = 0; j < SIZE - 1; j++){
@@ -77,11 +83,13 @@ void bubbleSort(int A[]){
     }
 }
 
+// Finds the median of the array
 int median(int A[]){
     bubbleSort(A);
     return A[SIZE/2];
 }
 
+// Finds the mode of the array
 int mode(int A[]){
     int count1 = counter(A, 1);
     int count2 = counter(A, 2);
@@ -97,6 +105,7 @@ int mode(int A[]){
     }
 }
 
+// Returns 0 if array is unsorted, and 1 otherwise
 int isSorted(int A[]){
     for(int i = 0; i < SIZE - 1; i++){
         if(A[i] > A[i+1]){
@@ -106,19 +115,24 @@ int isSorted(int A[]){
     return 1;
 }
 
+
+// Tests every function in the program
+// Uses the given array from the problem
+// Median = 2
+// Mode = 1
 int main(){
     printArray(A);
     if (isSorted(A)){
-        printf("The array is sorted");
+        printf("The array is sorted\n");
     }else{
-        printf("The array is not sorted");
+        printf("The array is not sorted\n");
     }
     bubbleSort(A);
     if (isSorted(A)){
-        printf("The array is sorted");
         printArray(A);
+        printf("The array is sorted\n");
     }
     arrayHistogram(A);
-    printf("The median is %d", median(A));
-    printf("The mode is %d", mode(A));
+    printf("The median is %d\n", median(A));
+    printf("The mode is %d\n", mode(A));
 }
