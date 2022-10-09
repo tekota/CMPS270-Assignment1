@@ -18,9 +18,11 @@ int main(){
 
     while (x>=0 && y>=0){
 
-    printf("Enter two numbers: \n");
+    printf("Enter two numbers: ");
     scanf("%d %d", &x, &y);
+    printf("\n");
     printf("Hamming distance: %d\n", hamming_distance(x, y));
+    printf("\n");
 
     }
 
